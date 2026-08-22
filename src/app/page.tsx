@@ -1,5 +1,15 @@
 import CakeLayersReveal from "@/components/CakeLayersReveal";
 import HeroScrollAnimation from "@/components/HeroScrollAnimation";
+import MenuSlider from "@/components/MenuSlider";
+
+const MENU_ITEMS = [
+  { image: "/images/menu/espresso.jpg", name: "Espresso", price: "$3.50" },
+  { image: "/images/menu/latte.jpg", name: "Latte", price: "$5.00" },
+  { image: "/images/menu/cappuccino.jpg", name: "Cappuccino", price: "$4.75" },
+  { image: "/images/menu/iced-coffee.jpg", name: "Iced Coffee", price: "$4.50" },
+  { image: "/images/menu/jucie.jpg", name: "Jucie", price: "$3.50" },
+  { image: "/images/menu/cake.jpg", name: "Cake", price: "$8.50" },
+];
 
 export default function Home() {
   return (
@@ -13,17 +23,19 @@ export default function Home() {
           { title: "Cherry topping", description: "The last thing you see, the first to lift." },
         ]}
       />  
-      <section
-        id="story"
-        className="flex min-h-[50vh] scroll-mt-[var(--header-height)] flex-col items-center justify-center px-6 py-24 text-center text-stone-200"
-      >
-        <p className="text-xs tracking-[0.35em] uppercase text-amber-100/70">
-          Our story
+      <section 
+       id="menu"
+       className="scroll-mt-[var(--header-height)] overflow-hidden px-6 py-24 text-stone-200">
+        <p className="text-center text-xs tracking-[0.35em] uppercase text-amber-100/70">
+          Menu
         </p>
-        <h2 className="mt-4 max-w-lg text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Roasted in small batches since the first pour.
+        <h2 className="mx-auto mt-4 max-w-lg text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          What we pour.
         </h2>
-      </section>
+        <div className="mx-auto mt-12 max-w-6xl">
+          <MenuSlider items={MENU_ITEMS} />
+        </div>
+        </section> 
       <section
         id="visit"
         className="flex min-h-[50vh] scroll-mt-[var(--header-height)] flex-col items-center justify-center px-6 py-24 text-center text-stone-200"
